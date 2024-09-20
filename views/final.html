@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Etapa Final - Caça ao Tesouro</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Parabéns! Você chegou à etapa final.</h1>
+    <p>Preencha o formulário abaixo:</p>
+    <form action="/submit" method="POST">
+      <label for="ra">RA:</label>
+      <input type="text" id="ra" name="ra" required><br><br>
+
+      <label for="nome">Nome Completo:</label>
+      <input type="text" id="nome" name="nome" required><br><br>
+
+      <label for="curso">Curso:</label>
+      <select id="curso" name="curso" required>
+        <option value="direito">Direito</option>
+        <option value="si">Sistemas de Informação</option>
+        <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+        <option value="administracao">Administração</option>
+        <option value="aeronautica">Aeronáutica</option>
+      </select><br><br>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
