@@ -34,12 +34,19 @@ app.post('/submit', (req, res) => {
   const { ra, nome, curso } = req.body;
 
   const db = readDB();
-  db.participantes.push({ ra, nome, curso });
 
+  const existingParticipant = db.participantes.find(participante => participante.ra === ra);
+
+  if (existingParticipant) {
+    return res.status(400).json({ error: 'Já existe um participante com esse RA.' });
+  }
+
+  db.participantes.push({ ra, nome, curso });
   writeDB(db);
 
   res.sendFile(path.join(__dirname, 'views', 'agradecimento.html'));
 });
+
 
 
 const PORT = 3000;
